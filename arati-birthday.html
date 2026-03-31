@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Arati 🎉</title>
+<style>
+body {
+   margin: 0;
+   font-family: 'Segoe UI', sans-serif;
+   background: linear-gradient(135deg, #ff758c, #ff7eb3);
+   overflow: hidden;
+   text-align: center;
+   color: white;
+}
+.container {
+   margin-top: 15%;
+   animation: fadeIn 2s ease-in;
+}
+h1 {
+   font-size: 50px;
+}
+p {
+   font-size: 20px;
+}
+button {
+   margin-top: 20px;
+   padding: 12px 25px;
+   font-size: 18px;
+   border: none;
+   border-radius: 25px;
+   background: white;
+   color: #ff4b5c;
+   cursor: pointer;
+   transition: 0.3s;
+}
+button:hover {
+   transform: scale(1.1);
+}
+#surprise {
+   display: none;
+   margin-top: 30px;
+   font-size: 22px;
+}
+@keyframes fadeIn {
+   from {opacity:0; transform: translateY(30px);}
+   to {opacity:1; transform: translateY(0);}
+}
+/* Confetti */
+.confetti {
+   position: absolute;
+   width: 10px;
+   height: 10px;
+   background: white;
+   top: -10px;
+   animation: fall linear infinite;
+}
+@keyframes fall {
+   to {
+       transform: translateY(100vh);
+   }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎉 Happy Birthday Arati 🎂</h1>
+<p>Wishing you a day full of happiness, smiles, and success ✨</p>
+<p>You make everything around you better 😊</p>
+<button onclick="showSurprise()">🎁 Click for Surprise</button>
+<div id="surprise">
+       💖 You are truly special, Arati!  
+       Keep shining and smiling always 🌟
+</div>
+</div>
+<!-- Music -->
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-happyrock.mp3" type="audio/mpeg">
+</audio>
+<script>
+// Confetti generator
+for (let i = 0; i < 80; i++) {
+   let confetti = document.createElement("div");
+   confetti.classList.add("confetti");
+   confetti.style.left = Math.random() * 100 + "vw";
+   confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+   document.body.appendChild(confetti);
+}
+// Surprise button
+function showSurprise() {
+   document.getElementById("surprise").style.display = "block";
+}
+</script>
+</body>
+</html>
